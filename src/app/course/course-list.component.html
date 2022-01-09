@@ -1,0 +1,43 @@
+<h2>Course list</h2>
+<div class="form-group row">
+  <label class="col-sm-2 col-from-label">Filter By:</label>
+  <div class="col-sm-10">
+    <input [(ngModel)] ="filter" class = "form-control" type="text">
+
+  </div>
+</div>
+
+<table class="table table-striped" *ngIf="filteredCourses.length > 0; else vazio">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Code</th>
+      <th>Release Date</th>
+      <th>Rating</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let course of filteredCourses">
+      <!-- para mesclar uma tag html com alguma variavel definida no component vc coloca o atributo html entre colchetes -->
+      <td><img [src]="course.imageUrl" width="40" height="40" alt="" /></td>
+      <!--passando imagem apartir de uma variavel contento o caminho para a imagem-->
+      <td>{{ course.name }}</td>
+      <td>{{ course.price }}</td>
+      <td>{{ course.code }}</td>
+      <td>{{ course.releaseDate }}</td>
+      <td>
+        <app-rating-star [rating]="course.rating"></app-rating-star>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #vazio>
+  <div class="alert alert-danger " role="alert">
+    Curso não encontrado
+  </div>
+</ng-template>
