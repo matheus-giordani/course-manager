@@ -4,13 +4,12 @@ import { CourseService } from './course.service';
 import { Course } from './interface';
 
 @Component({
-  selector: 'app-course-list',
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.css'],
 })
 export class CourseListComponent implements OnInit {
   filteredCourses: Course[] = [];
-  
+
 
   _courses: Course[] = [];
   _filterBy!: string;
