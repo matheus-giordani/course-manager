@@ -30,9 +30,19 @@
       <!-- | altera a exbição de alguma propiedade -->
       <td>{{ course.releaseDate | date: 'dd/MM/yyyy' }}</td>
       <td>
+
         <app-rating-star [rating]="course.rating"></app-rating-star>
       </td>
-      <td></td>
+      <td>
+
+          <a [routerLink]="['/courses_info', course.id]">
+            <i class="bi bi-info-square-fill" style="font-size:x-large; margin-left: 20px;"></i>
+
+          </a>
+
+
+
+      </td>
     </tr>
   </tbody>
 </table>
