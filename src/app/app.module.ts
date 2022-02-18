@@ -2,6 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule} from '@angular/common/http'
+
 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +22,8 @@ import { AppRoutingModule } from './app.raunting.module';
     AppComponent, CourseListComponent, RatingStarComponent, ReplacePipe, NavBarComponent, PageNotFoundComponent, CourseInfoComponent,
   ],
   imports: [
-    BrowserModule, FormsModule, AppRoutingModule, NgxSpinnerModule,BrowserAnimationsModule
+    BrowserModule, FormsModule, AppRoutingModule, NgxSpinnerModule,BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

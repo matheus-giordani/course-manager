@@ -9,7 +9,7 @@ import { Course } from './interface';
 })
 export class CourseListComponent implements OnInit {
   filteredCourses: Course[] = [];
-
+  del: boolean = false
 
   _courses: Course[] = [];
   _filterBy!: string;
@@ -18,24 +18,45 @@ export class CourseListComponent implements OnInit {
   constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
-    this._courses = this.courseService.getAll();
-    this.filteredCourses = this._courses;
+    this.getAll();
+  }
+
+  getAll(): void {
+    this.courseService.getAll().subscribe({
+      next: (f) => {
+        this._courses = f;
+        this.filteredCourses = this._courses;
+        console.log(this._courses);
+      },
+      error: (err) => console.log('Erros', err),
+    });
   }
 
   set filter(value: string) {
     this._filterBy = value;
 
     //fazendo filtro a partir do valor informado no input
-    this.filteredCourses = this._courses.filter((course: Course) =>
-      course.name.toLowerCase().indexOf(this._filterBy.toLowerCase()) > -1);
-
-
-
+    this.filteredCourses = this._courses.filter(
+      (course: Course) =>
+        course.name.toLowerCase().indexOf(this._filterBy.toLowerCase()) > -1
+    );
   }
 
   get filter() {
     return this._filterBy;
   }
+
+  delete(id:number){
+    return this.courseService.deleteByid(id).subscribe({
+      next: f => {
+        this.del = true
+        setTimeout(() => {
+          this.del = false
+          this.getAll()
+
+        }, 1000);
+
+      }
+    })
+  }
 }
-
-
