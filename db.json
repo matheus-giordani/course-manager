@@ -7,9 +7,9 @@
       "description": "Neste curso, os alunos irão obter um conhecimento aprofundado sobre os recursos disponíveis no módulo de Forms.",
       "duration": 80,
       "code": "DWQ-3412",
-      "rating": 3.5,
-      "price": 24.99,
-      "imageUrl": "/assets/images/forms.png"
+      "rating": 3,
+      "price": 2,
+      "imageUrl": "assets/images/forms.png"
     },
     {
       "id": 3,
@@ -20,7 +20,7 @@
       "code": "QPL-0913",
       "rating": 4,
       "price": 36.99,
-      "imageUrl": "/assets/images/http.png"
+      "imageUrl": "assets/images/http.png"
     },
     {
       "id": 4,
@@ -31,7 +31,7 @@
       "code": "OHP-1095",
       "rating": 4.5,
       "price": 46.99,
-      "imageUrl": "/assets/images/router.png"
+      "imageUrl": "assets/images/router.png"
     },
     {
       "id": 5,
@@ -42,7 +42,7 @@
       "code": "PWY-9381",
       "rating": 5,
       "price": 56.99,
-      "imageUrl": "/assets/images/animations.png"
+      "imageUrl": "assets/images/animations.png"
     }
   ]
 }
